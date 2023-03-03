@@ -109,7 +109,7 @@ div{
   }
   
   /* Style the navigation links */
-  #myMenu li b {
+  #myMenu li a {
     padding: 12px;
     text-decoration: none;
     color: black;
