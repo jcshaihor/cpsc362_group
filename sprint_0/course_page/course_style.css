@@ -47,7 +47,6 @@ img{
   float: right;
   padding: 6px;
   border: none;
-  margin-top: 8px;
   margin-right: 16px;
   font-size: 17px;
 }
@@ -60,18 +59,12 @@ img{
     text-align: left;
     width: 100%;
     margin: 0;
-    padding: 14px;
   }
   .homebar input[type=text] {
     border: 1px solid #ccc;
   }
 }
 
-* {
-  box-sizing: border-box;
-}
-
-/* Create a column layout with Flexbox */
 .row {
     display: flex;
 
