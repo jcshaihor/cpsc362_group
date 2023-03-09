@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Dashboard</title>
     <link rel="stylesheet" href="dashboard_style.css">
+
     <!--style will be temporary-->
     <style>
         menu {
@@ -21,14 +22,17 @@
         <div class="bg-color">
             <!--Top Navigation Bar-->
             <div class="topnav">
-                <a class="logo" href="#">ㅤ</a>
-                <a class="active" href="#">Home</a>
-                <a href="#">Search</a>
-                <a href="#">Catalog</a>
-                <a href="#">Settings</a>
-                <b class="img">ㅤ</b>
-                <b href="#"><menu></menu><menu></menu><menu></menu></b>
-                <b href="#">Logout</b>
+                <div class="leftnav">
+                    <a class="logo" href="#">ㅤ</a>
+                    <h1 id="title">Tuffy Courses</h1>
+                </div>
+                <div class="rightnav">
+                    <input type="text" placeholder="Search..." name="search" id="search">
+                    <a href="../login_page/login.html">Logout</a>
+                    <a class="profile">Profile</a>
+                    <a href="../catalog/catalog.html">Catalog</a>
+                    <a class="active" href="#">Home</a>
+                </div>
             </div>
 
             <h1 style="padding: 10px">Your Pinned Courses</h1>
