@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.image-background {
+    background-image: url('campus-gateway-800x500.jpeg');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-overlay {
+    height: 100vh;
+    width: 100%;
+    background-color: #00274cc4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background: white;
+    position: relative;
+    height: 300px;
+    width: 250px;
+    padding: 20px 20px;
+    border-radius: 10px;
+}
+
+.loginWindow {
+    font-family: Helvetica;
+    text-align: center;
+}
+
+.username {
+    border: 1px solid black;
+    border-radius: 100px;
+    display: inline-block;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.container input[type="email"],
+.container input[type="password"] {
+    padding-left: 30px;
+    padding-bottom: 2px;
+}
+
+.form-icon {
+    opacity: .6;
+    position: absolute;
+    top: 0rem;
+}
+
+.password {
+    border: 1px solid black;
+    border-radius: 100px;
+    display: inline-block;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.loginButton {
+    background-color: #be7c19;
+    border: none;
+    color: white;
+    border-radius: 100px;
+    padding: 10px 32px;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.loginButton:hover {
+    color: white;
+    background: #a46b16;
+}
+
+
