@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>   
+    <link rel="stylesheet" href="course_style.css">
+    <link rel="stylesheet" href="tuffy-the-titan.jpeg">
+</head>
+
+<body>
+  <div>
+    <button type="submit">
+    <img src="tuffy-the-titan.jpeg">
+    </button>
+  </div> 
+    <div class="homebar">
+      <ul id="homenavi">
+      <a href="#home">Home</a>
+      <a class="active" href="#courses">Courses</a>
+      <a href="#profile">Profile</a>
+      <a href="#settings">Settings</a>
+          <div class="search-container"> 
+          <form action="/action_page.php">
+          <input type="text" placeholder="Search.." name="search">
+          <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </div> 
+      </ul>
+    </div>
+      <div class="row">
+        <div class="left" style="background-color:#bbb;">
+          <h2>Menu</h2>
+          <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+          <ul id="myMenu">
+            <li><a href="#">Computer Science</a></li>
+            <li><a href="#">Computer Engineering</a></li>
+            <li><a href="#">Political Science</a></li>
+            <li><a href="#">Biology</a></li>
+            <li><a href="#">Physics</a></li>
+            <li><a href="#">Sociology</a></li>
+            <li><a href="#">History</a></li>
+          </ul>
+        </div>
+          <div class="right" style="background-color:#ddd;">
+            <h2>Page Content</h2>
+            <p>Start to type for a specific category inside the search bar to "filter" the search options.</p>
+            <p>Some text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
+            <p>Some other text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
+            <p>Some text..</p>
+          </div>
+      </div>
+
+<script>
+  function myFunction() 
+  {
+    var input, filter, ul, li, b, i;
+    input = document.getElementById("mySearch");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myMenu");
+    i = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++)
+    {
+      a = li[i].getElementsByTagName("a")[0];
+      if (a.innerHTML.toUpperCase().indexOf(filter) > -1)
+        {
+          li[i].style.display = "";
+        } 
+      else 
+        {
+          li[i].style.display = "none";
+        }
+    }
+  }
+  </script>       
+      
+    
+</body>

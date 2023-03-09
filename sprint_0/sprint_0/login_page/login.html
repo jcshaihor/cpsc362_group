@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPSC 362 Project</title>
+    <link rel="stylesheet" href="login_style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <div class="image-background">
+        <div class="image-overlay">
+            <div class="container">
+                <div class="loginWindow">
+                    <h1>
+                        <b>Login</b>
+                    </h1>
+                </div>
+                <form action="../dashboard/dashboard.html">
+                    <div class="username">
+                        <p>
+                            <span style="font-size:20px" class="form-icon material-symbols-rounded">
+                                mail
+                                </span>
+                            <input type="email" pattern=".+@csu.fullerton.edu" placeholder="Enter username" title="Please provide a CSUF email" required>
+                        </p>
+                    </div>
+                    <div class="password">
+                        <p>
+                            <span style="font-size:20px" class="form-icon material-symbols-rounded">
+                                lock
+                                </span>
+                            <input type="password" placeholder="Enter password" title="Please provide your password">
+                        </p>
+                    </div>
+                    <div class="button">
+                        <input type="submit" class="loginButton" value="Login">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
