@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+  }
+  
+    .bg-color {
+    height: 100vh;
+    width: 100%;
+    background-color: #00274cc4;
+  }
+  
+  /* nav style grabbed from w3 schools */
+      
+  .topnav {
+    overflow: hidden;
+    background-color: #00274cc4;
+  }
+    
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Style the search box inside the navigation bar */
+  #search {
+    padding: 6px;
+    border: none;
+    font-size: 17px;
+    padding: 14px 16px;
+    float: right;
+    margin-right: 10px;
+  }
+  
+  .search-bar button {
+    float: right;
+    border: 0;
+    border-radius: 50%;
+    background: #00274cc4;
+    margin-top: 5px;
+  }
+    
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: #00274cc4;
+    color: white;
+  }
+  
+  /* Tuffy Logo */
+  .topnav a.logo {
+    background-color: #00274cc4;
+    background-image: url('tuffy-logo.png');
+    background-position: center;
+    background-size: cover;
+    float: left;
+  }
+  
+  .leftnav {
+    float: left
+  }
+  
+  #title {
+    margin-left: 60px;
+    margin-top: 5px;
+    color: #ddd;
+  }
+
+  #classtitle {
+    text-align: center;
+    color: #ddd;
+    margin-top: 40px;
+    margin-bottom: -40px;
+  }
+  
+  /* Grid Container */
+  .grid-container {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      gap: 10px;
+      padding: 10px;
+  }
+  .grid-container button {
+      background-color:#be7c19;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 15px 15px;
+      font-size: 16px;
+  }
+  .grid-container button:hover {
+      background-color:#905805;
+      color: #ffffff;
+  }
+  .card-list{
+
+    display: flex;
+    flex-direction: column;
+    padding: 5% 15% 5% 15%;
+    gap: 15px;
+    border: 1px red solid;
+}
+
+.card{
+    background: white;
+    padding: 1rem; 
+    border: 1px solid rgb(203, 201, 201);
+    border-radius: .25rem;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+.card.card-shadow{
+    border: 1px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+.card:hover, .card:focus{
+    border: 1px solid black;
+}
+
+.card-header{
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+}
+
+.card-body{
+    font-size: .9rem;
+}
+
+.card-footer{
+    margin-top: 1rem; 
+}
+
+
+.comment-container {
+  width: 50%;
+  border: 1px solid #ccc;
+  margin: 50px 0;
+  padding: 10px 20px;
+  font-family: 'poppins', sans-serif;
+  border-radius: 5px;
+  margin-left: 25%;
+  margin-top: 80px;
+  box-shadow: 0px 0px 10px 1px;
+}
+
+.comment-form input, .comment-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  outline: none;
+  font-size: 18px;
+  font-family: 'poppins', sans-serif;
+  border: 1px solid #ddd;
+  color: #444;
+}
+
+.comment-form button {
+  margin: 10px 0;
+  border: none;
+  background-color: #be7c19;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 3px;
+  color: white;
+}
+
+#openedText {
+  color: white;
+  
+}
+
+#savedText {
+  color: white;
+}
+
+.comment-container2 {
+  width: 50%;
+  border: 1px solid #ccc;
+  margin: 50px 0;
+  padding: 10px 20px;
+  font-family: 'poppins', sans-serif;
+  border-radius: 5px;
+  margin-left: 25%;
+  margin-top: 80px;
+  box-shadow: 0px 0px 10px 1px;
+}
+
+.comment-form2 input, .comment-form2 textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  outline: none;
+  font-size: 18px;
+  font-family: 'poppins', sans-serif;
+  border: 1px solid #ddd;
+  color: #444;
+}
+
+.comment-form2 button {
+  margin: 10px 0;
+  border: none;
+  background-color: #be7c19;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 3px;
+  color: white;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tuffy Courses | CPSC 362</title>
+    <link rel="stylesheet" href="classk_style.css">
+
+    <style>
+        menu {
+            width: 35px;
+            height: 4px;
+            background-color: black;
+            margin: 3px 0;
+        }
+    </style>
+</head>
+<!--Main-->
+<body onload="get()">
+    <div class="bg-color">
+        <!--Top Navigation Bar-->
+        <div class="topnav">
+            <div class="leftnav">
+                <a class="logo" href="#">ㅤ</a>
+                <h1 id="title">Tuffy Courses</h1>
+            </div>
+            <div class="rightnav">
+                <input type="text" placeholder="Search..." name="search" id="search">
+                <a href="../login_page/login.html">Logout</a>
+                <a class="profile">Profile</a>
+                <a href="../catalog/catalog.html">Catalog</a>
+                <a class="active" href="#">Home</a>
+            </div>
+         </div>
+
+        <h1 style="padding: 10px" id="classtitle">CPSC 362</h1>
+
+            <div class="comment-container2">
+                <form action="#" class="comment-form2">
+                    <h3 id="openedText"></h3>
+                    <button>Comment</button>
+                </form>
+            </div>
+
+            <div class="comment-container2">
+                <form action="#" on class="comment-form2">
+                    <h3 id="savedText"></h3>
+                    <button>Comment</button>
+                </form>
+            </div>
+     
+         <div class="comment-container">
+            <form action="#" onsubmit="save();return false" class="comment-form">
+                <input type="text" placeholder="Write Your Question" id="input"/>
+                <button>Post</button>
+            </form>
+        </div>
+
+    </div>
+</body>
+<script>
+    var storedItem = localStorage.getItem("storedItem");
+
+    function save() {
+         var Item = document.getElementById("input").value;
+         localStorage.setItem("storedItem", Item);
+         document.getElementById("savedText").innerHTML = Item;
+    }
+
+    function get() {
+         localStorage.getItem("storedItem");  
+         document.getElementById("openedText").innerHTML = storedItem;
+    }
+</script>
+</html>
