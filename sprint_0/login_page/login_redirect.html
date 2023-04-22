@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+    // temp accounts since local text file database cannot work
+    const accounts = ["testemail123", "guy4", "rBob20"];
+    var passwords = ["123", "@45", "789"];
+
+
+    // get user and pass inputs from url
+    let url = window.location.href;
+
+    // get username and password
+    let user, pass = "";
+    let u, ud = false;
+    let uI = 0;
+    for (let i = 0; i < url.length; i++) {
+        if(u == true & url[i] == "%" & ud == false) {
+            user = url.substring(uI, i); ud = true;
+        }
+        if(url[i] == "="){
+            if(ud == false){
+                u = true; uI = i+1;
+            }
+            else {
+                pass = url.substring(i+1, url.length)
+            }
+        }
+    }
+
+    // check valid user and pass
+    let vun = 0
+    let verU = false
+    for (let i = 0; i < accounts.length; i++) {
+        if(accounts[i] == user) {vun == i; verU = true;}
+    }
+    if(verU) {
+        if(passwords[vun] == pass) {
+                window.location.href = "../dashboard/dashboard.html";
+            }
+            else {window.location.href = "../login_page/login.html";}
+    }
+    else {window.location.href = "../login_page/login.html";}
+</script>
+
+</body>
+</html>
