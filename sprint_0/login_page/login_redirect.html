@@ -39,7 +39,7 @@
     }
     if(verU) {
         if(passwords[vun] == pass) {
-                window.location.href = "../dashboard/dashboard.html";
+                window.location.href = "../dashboard/dashboard.html?user="+user; // sends username to next page to be used there
             }
             else {window.location.href = "../login_page/login.html";}
     }
