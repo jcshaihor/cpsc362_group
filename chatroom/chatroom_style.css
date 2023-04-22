@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #00274cc4;
+  }
+    
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Style the search box inside the navigation bar */
+  #search {
+    padding: 6px;
+    border: none;
+    font-size: 17px;
+    padding: 14px 16px;
+    float: right;
+    margin-right: 10px;
+  }
+  
+  .search-bar button {
+    float: right;
+    border: 0;
+    border-radius: 50%;
+    background: #00274cc4;
+    margin-top: 5px;
+  }
+    
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: #00274cc4;
+    color: white;
+  }
+  
+  /* Tuffy Logo */
+  .topnav a.logo {
+    background-color: #00274cc4;
+    background-image: url('tuffy-logo.png');
+    background-position: center;
+    background-size: cover;
+    float: left;
+  }
+  
+  .leftnav {
+    float: left
+  }
+
+  #title {
+    margin-left: 60px;
+    margin-top: 5px;
+    color: #ddd;
+  }
+
+.container {
+    background-color: #00274cc4;
+    height: 100vh;
+    overflow-y: auto;
+}
+  
+.main-heading {
+    text-align: center;
+    margin-top: 10px;
+    color: white;
+}
+
+.main{
+
+    display: flex;
+    flex-direction: column;
+    padding: 3% 10% 3% 10%;
+    gap: 15px;
+    border: 1px black solid;
+    border-radius: 10px;
+    background-color: white;
+    margin-top: 10px;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 50px;
+}
+
+.card{
+    background: white;
+    padding-right: 1rem; 
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    border: 1px solid rgb(203, 201, 201);
+    border-radius: .25rem;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.text-area input {
+    padding: 5px;
+    width: 100%;
+}
+
+.btn-question {
+    --color: hsl(200, 50%, 50%);
+    background: var(--color);
+    color: white;
+    border: none; 
+    font-size: 1rem;
+    padding: .5em .75em;
+    border-radius:  .25em;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.card.card-shadow{
+    border: 1px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+.card:hover, .card:focus{
+    border: 1px solid black;
+}
+
+.card-header{
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+    padding-top: 1rem;
+    overflow:hidden;
+}
+
+.card-body{
+    font-size: .9rem;
+    margin-bottom: .5rem;
+    color:rgba(0, 0, 0, 0.5);
+}
+
+.card-footer{
+    margin-top: 1rem; 
+}
+
+
+.btn{
+    background: rgb(64, 149, 191);
+    color: white;
+    border: none; 
+    font-size: 1rem;
+    padding: .5em .75em;
+    border-radius:  .25em;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background: hsl(200, 50%, 60%);
+}
+
+.btn.btn-outline{
+    background: none;
+    border: 1px solid var(--color);
+    color: var(--color);
+}
+
+.btn.btn.btn-outline:hover{
+    background: hsl(200, 50%, 90%);
+
+}
+
+.btn + .btn{ /* if you have btn folloed by button use (+)*/
+    margin-left: .25rem;
+}
+
+.btn-delete-draft{
+    background: rgb(221, 38, 38);
+    color: #ffffff;
+    border: none; 
+    font-size: 1rem;
+    padding: .5em .75em;
+    margin-right: 5px;
+    border-radius:  .25em;
+    cursor: pointer;
+}
+
+.btn-delete-draft:hover {
+    background: rgb(221, 70, 70);
+}
+
+.likes-style {
+    font-size: 14px;
+    position: absolute;
+    margin-left: 325px;
+}
+
+.likes-style button{
+    background: white;
+    color: rgb(255, 217, 0);
+    border: none;
+    cursor: pointer;
+}
+
+.likes-style span {
+    position: absolute;
+    padding-top: 3px;
+}
+
+/*.posted-answer {
+    margin-bottom: 10px;
+}*/
+
+.posted-by {
+    font-size: .7rem;
+    margin-bottom: 10px;
+    color:rgba(0, 0, 0, 0.5);
+}

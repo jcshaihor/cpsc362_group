@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Questions and Answers</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0" />
+        <link rel="stylesheet" href="chatroom_style.css">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div class="container">
+
+            <!--Top Navigation Bar-->
+            <div class="topnav">
+                <div class="leftnav">
+                    <a class="logo" href="dashboard.html">ㅤ</a>
+                    <h1 id="title">Tuffy Courses</h1>
+                </div>
+                <div class="rightnav">
+                    <input type="text" placeholder="Search..." name="search" id="search">
+                    <a href="index.html">Logout</a>
+                    <a class="profile">Profile</a>
+                    <a href="catalog.html">Catalog</a>
+                    <a class="active" href="dashboard.html">Home</a>
+                </div>
+            </div>
+
+            <div class="main-heading">
+                <h1 id="result"></h1>
+            </div>
+            
+            <!--Card List-->
+            <div class="main">
+                <!--Question Input-->
+                <div class="question-box">
+                    <div class="text-area">
+                        <input class="question" id="question" placeholder="Write your question..." cols="68" rows="10"></textarea>
+                    </div>
+                    <button class="btn-question" id="btn-question">Submit Question</button>
+                    <hr>
+                </div>
+                <div class="card-list">
+                    <div class="card-container" id="card-list">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="chatroom.js"></script>
+    </body>
+</html>
