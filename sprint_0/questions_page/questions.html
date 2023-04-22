@@ -3,10 +3,82 @@
     <head>
         <title>Questions and Answers</title>
         <link rel="stylesheet" href="./styles.css">
-        <script defer src="./questions.js"></script>
         <meta charset="UTF-8">
     </head>
-    <body>
-
-    </body>
 </html>
+
+<body>
+    <div class="top-bar">
+        <h1>
+            CS 362
+        </h1>
+    </div>
+    <div class="main">
+        
+        <ol id="ordered-list">
+            <button id="form-button" class="btn" data-modal="modalOne">Create a Question</button>
+        </ol>
+    </div>
+    <div id="modalOne" class="modal">
+        <div class="modal-content">
+          <div class="contact-form">
+            <a class="close" id="close-form">&times;</a>
+            <form action="/">
+              <h2>Submit a New Question</h2>
+              <div>
+                <input class="title" type="text" name="title" placeholder="Question Title" />
+              </div>
+              <span>Message</span>
+              <div>
+                <textarea rows="5"></textarea>
+              </div>
+              <button type="submit" href="/">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    <script src="data.js"></script>
+    <script>
+        console.log(threads);
+        var container = document.getElementById("ordered-list");
+        for (let thread of threads) {
+            var html = `
+            <a href="/comments.html?${thread.id}">
+                <li class="row">
+                        <h4 class="title">
+                            ${thread.title}
+                        </h4>
+                        <div class="bottom">
+                            <p class="timestamp">
+                                ${new Date(thread.date).toLocaleString()}
+                            </p>
+                            <p class="comment-count">
+                                ${thread.comments.length} comments
+                            </p>
+                        </div>
+                </li>
+            </a>
+            `
+            container.insertAdjacentHTML('beforeend', html);
+        }
+
+        let btn = document.getElementById('form-button');
+        btn.onclick = function () {
+          let modal = btn.getAttribute("data-modal");
+          document.getElementById(modal).style.display = "block";
+        };
+
+      let closeBtn = document.getElementById('close-form');
+        closeBtn.onclick = function () {
+          let modal = closeBtn.closest(".modal");
+          modal.style.display = "none";
+        };
+
+      window.onclick = function (event) {
+        if (event.target.className === "modal") {
+          event.target.style.display = "none";
+        }
+      };
+    </script>
+</body>
