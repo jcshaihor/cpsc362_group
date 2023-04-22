@@ -6,8 +6,8 @@
 
 <script>
     // temp accounts since local text file database cannot work
-    const accounts = ["testemail123", "guy4", "rBob20"];
-    var passwords = ["123", "@45", "789"];
+    const accounts = ["testemail123", "guy", "bob"];
+    var passwords = ["123", "456", "789"];
 
 
     // get user and pass inputs from url
@@ -35,7 +35,7 @@
     let vun = 0
     let verU = false
     for (let i = 0; i < accounts.length; i++) {
-        if(accounts[i] == user) {vun == i; verU = true;}
+        if(accounts[i] == user) {vun = i; verU = true;}
     }
     if(verU) {
         if(passwords[vun] == pass) {
