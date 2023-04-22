@@ -38,13 +38,13 @@
         </div>
       </div>
 
-    <script src="data.js"></script>
+    <script src="./data.js"></script>
     <script>
         console.log(threads);
         var container = document.getElementById("ordered-list");
         for (let thread of threads) {
             var html = `
-            <a href="/comments.html?${thread.id}">
+            <a href="./comments.html?${thread.id}">
                 <li class="row">
                         <h4 class="title">
                             ${thread.title}
