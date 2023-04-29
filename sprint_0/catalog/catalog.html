@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,300,0,0" />
   <link rel="stylesheet" href="catalog_style.css">
-  <link rel="stylesheet" href="tuffy-the-titan.jpeg">
   <title>Catalog</title>
 </head>
 <body>
@@ -16,58 +16,42 @@
     </div>
     <div class="rightnav">
       <input type="text" placeholder="Search..." name="search" id="search">
-      <a href="../login_page/login.html">Logout</a>
+      <a href="index.html">Logout</a>
       <a href="">Profile</a>
-      <a class="active" href="../catalog/catalog.html">Catalog</a>
-      <a class="home" href="../dashboard/dashboard.html">Home</a>
+      <a class="active" href="catalog.html">Catalog</a>
+      <a class="home" href="dashboard.html">Home</a>
       <b class="img">ㅤ</b>
     </div>
   </div>
   <div class="row">
     <div class="left" style="background-color:#bbb;">
       <h2>Menu</h2>
-      <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+      <!--Search-->
+      <form action="chatroom.html" autocomplete="off">
+        <div class="autocomplete">
+          <input type="text" id="mySearch" class="mySearch" placeholder="Search..">
+          <button onclick="passClass()" class="material-symbols-outlined">
+            search
+          </button>
+        </div>
+    </form>
+
       <ul id="myMenu">
-        <li><a href="#">Computer Science</a></li>
-        <li><a href="#">Computer Engineering</a></li>
-        <li><a href="#">Political Science</a></li>
-        <li><a href="#">Biology</a></li>
-        <li><a href="#">Physics</a></li>
-        <li><a href="#">Sociology</a></li>
-        <li><a href="#">History</a></li>
+        <li><a id="cpsc" onclick="cpsc()">Computer Science</a></li>
+        <li><a id="cpse" onclick="cpsc()">Computer Engineering</a></li>
+        <li><a id="poli" onclick="poli()">Political Science</a></li>
+        <li><a id="bio" onclick="bio()">Biology</a></li>
+        <li><a id="phys" onclick="phys()">Physics</a></li>
+        <li><a id="soc" onclick="soc()">Sociology</a></li>
+        <li><a id="hist" onclick="hist()">History</a></li>
       </ul>
     </div>
-    <div class="right" style="background-color:#ddd;">
-        <h2>Page Content</h2>
-        <p>Start to type for a specific category inside the search bar to "filter" the search options.</p>
-        <p>Some text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
-        <p>Some other text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
-        <p>Some text..</p>
+    <div class="right" id="right" style="background-color:#ddd;">
+
     </div>
-  </div>
-</body>
-<script>
-  function myFunction() 
-  {
-    var input, filter, ul, li, b, i;
-    input = document.getElementById("mySearch");
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("myMenu");
-    i = ul.getElementsByTagName("li");
-    for (i = 0; i < li.length; i++)
-    {
-      a = li[i].getElementsByTagName("a")[0];
-      if (a.innerHTML.toUpperCase().indexOf(filter) > -1)
-        {
-          li[i].style.display = "";
-        } 
-      else 
-        {
-          li[i].style.display = "none";
-        }
-    }
-  }
-  </script>       
+  </div>     
       
-    
+    <script src="catalog.js"></script>
 </body>
+
+</html>
