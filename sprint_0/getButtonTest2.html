@@ -1,0 +1,13 @@
+<html>
+<body>
+   <button onclick=myfunction() id="btn">HELLO</button>
+   <p id="result"></p>
+   <script>
+      function myfunction(){
+      let btn = document.getElementById("btn");
+      let text = btn.innerHTML;
+      document.getElementById("result").innerHTML = "The text visible on the button: <b>" + text + "</b>";
+      }
+   </script>
+</body>
+</html>
