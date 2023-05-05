@@ -5,6 +5,7 @@ var defaultThreads = [
         author: "Aaron",
         date: Date.now(),
         content: "Thread content",
+        votes: 0,
         comments: [],
     },
     {
@@ -13,10 +14,12 @@ var defaultThreads = [
         author: "John Cena",
         date: Date.now(),
         content: "Thread content 2",
+        votes: 0,
         comments: [],
     },
     {
         id: 3,
+        votes: 0,
         title: "How to link javascript with HTML",
         author: "CSS",
         date: Date.now(),
@@ -29,6 +32,7 @@ var defaultThreads = [
         author: "Baron",
         date: Date.now(),
         content: "Thread content",
+        votes: 0,
         comments: [],
     },
     {
@@ -37,6 +41,7 @@ var defaultThreads = [
         author: "Aaron",
         date: Date.now(),
         content: "Thread content",
+        votes: 0,
         comments: [],
     },
 ]

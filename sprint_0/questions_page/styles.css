@@ -1,6 +1,7 @@
 html, body {
     margin: 0;
     height: 100%;
+    font-family: 'Rubik';
 }
 a {
     text-decoration: none;
@@ -19,10 +20,13 @@ p {
 .main {
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 1% 5% 0% 5%;
     gap: 15px;
     border: 1px red solid;
     height: 100%;
+    background-color: #F5F6FA;
+
 }
 
 
@@ -30,33 +34,55 @@ p {
     display: flex;
     flex-direction: column;
     height: 100%;
+    width: 65%;
     background: white;
     padding: 1rem; 
     border-radius: .25rem;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+    background-color: #F5F6FA;
+    border: 1px green solid;
 
 }
 
-.main li{
+.row a{
+    width: 100%;
+}
+.row li{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     list-style-type: none;
-    margin: 10px;
+    padding: 1rem;
+}
+
+.row li:hover{
+    border: 1px solid blue;
+
+}
+
+
+.row {
+    margin: 10px 0 10px 0;
+    display: flex;
+    border: 1px brown solid;
     background: white;
-    padding: 2rem; 
     border: 1px solid rgb(203, 201, 201);
     border-radius: .25rem;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
 
 }
-
-
-.main li:hover{
-    border: 1px solid black;
-
+.row:hover{
+    border: 1.5px solid blue;
 
 }
-
-.row {
-    padding: 5px 0;
+.qVotes {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-radius: 0.25rem;
+    background-color: #F5F6FA;
 }
 .bottom {
     display: flex;
