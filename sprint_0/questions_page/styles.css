@@ -1,8 +1,11 @@
 html, body {
     margin: 0;
-    height: 100%;
     font-family: 'Rubik';
+    height:min-content;
+    background-color: #F5F6FA;
+
 }
+
 a {
     text-decoration: none;
     color: black;
@@ -23,8 +26,7 @@ p {
     align-items: center;
     padding: 1% 5% 0% 5%;
     gap: 15px;
-    border: 1px red solid;
-    height: 100%;
+    /* border: 1px red solid; */
     background-color: #F5F6FA;
 
 }
@@ -33,13 +35,12 @@ p {
 .main ol{
     display: flex;
     flex-direction: column;
-    height: 100%;
     width: 65%;
     background: white;
     padding: 1rem; 
     border-radius: .25rem;
     background-color: #F5F6FA;
-    border: 1px green solid;
+    /* border: 1px green solid; */
 
 }
 
@@ -55,7 +56,6 @@ p {
 }
 
 .row li:hover{
-    border: 1px solid blue;
 
 }
 
@@ -63,7 +63,7 @@ p {
 .row {
     margin: 10px 0 10px 0;
     display: flex;
-    border: 1px brown solid;
+    /* border: 1px brown solid; */
     background: white;
     border: 1px solid rgb(203, 201, 201);
     border-radius: .25rem;
@@ -71,7 +71,7 @@ p {
 
 }
 .row:hover{
-    border: 1.5px solid blue;
+    border: 1.5px solid #5357b6;
 
 }
 .qVotes {
@@ -211,6 +211,7 @@ p {
   }
   button:hover {
     background: #2371a0;
+    cursor: pointer;
   }
   .close {
     color: #aaa;

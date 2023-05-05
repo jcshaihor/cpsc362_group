@@ -2,144 +2,176 @@
 <html>
 
 <head>
-  <title>Questions and Answers</title>
-  <link rel="stylesheet" href="./styles.css">
-  <meta charset="UTF-8">
-  <script src="https://kit.fontawesome.com/77b3ab044a.js" crossorigin="anonymous"></script>
+    <title>Questions and Answers</title>
+    <link rel="stylesheet" href="./styles.css">
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/77b3ab044a.js" crossorigin="anonymous"></script>
 </head>
 
-</html>
-
 <body>
-  <div class="top-bar">
-    <h1>
-      CS 362
-    </h1>
-  </div>
-  <div class="main">
-
-    <ol id="ordered-list">
-      <button id="form-button" class="btn" data-modal="modalOne">Create a Question</button>
-    </ol>
-  </div>
-  <div id="modalOne" class="modal">
-    <div class="modal-content">
-      <div class="contact-form">
-        <a class="close" id="close-form">&times;</a>
-        <form action="/">
-          <h2>Submit a New Question</h2>
-          <div>
-            <input class="title" type="text" name="title" placeholder="Question Title" />
-          </div>
-          <span>Message</span>
-          <div>
-            <textarea rows="5"></textarea>
-          </div>
-          <button type="submit" href="/">Submit</button>
-        </form>
-      </div>
+    <div class="top-bar">
+        <h1>
+            CS 362
+        </h1>
     </div>
-  </div>
+    <div class="main">
 
-  <script src="./data.js"></script>
-  <script>
-    console.log(threads);
-    var container = document.getElementById("ordered-list");
-    for (let thread of threads) {
-      let qID = `q${thread.id}`;
-      var html = `
-            <div class="row">
-              <div class="qVotes">
-                <i id="${qID}" class="fa-solid fa-plus" style="color: #C5C6EF"></i>
-                <div id="q${qID}" style="color: #5357b6">${thread.votes}</div>
-                <i id="d${qID}"class="fa-solid fa-minus" style="color: #C5C6EF"></i>
-                </div>
-              <a href="./comments.html?${thread.id}">
-                  <li>
-                      <h4 class="title">
-                              ${thread.title}
-                          </h4>
-                          <div class="bottom">
-                              <p class="timestamp">
-                                  ${new Date(thread.date).toLocaleString()}
-                              </p>
-                              <p class="comment-count">
-                                  ${thread.comments.length} comments
-                              </p>
-                          </div>
-                  </li>
-                </a>
-              </div>
+        <ol id="ordered-list">
+            <button id="form-button" class="btn" data-modal="modalOne">Create a Question</button>
+        </ol>
+    </div>
+    <div id="modalOne" class="modal">
+        <div class="modal-content">
+            <div class="contact-form">
+                <a class="close" id="close-form">&times;</a>
+                <form id="questionForm">
+                    <h2>Submit a New Question</h2>
+                    <div>
+                        <input class="title" type="text" name="title" placeholder="Question Title" />
+                        <input class="title" type="text" name="author" placeholder="Author Name" />
+                    </div>
+                    <span>Message</span>
+                    <div>
+                        <textarea rows="5" name="content"></textarea>
+                    </div>
+                    <button type="submit" action="#">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
-            `
-                  
-      container.insertAdjacentHTML('beforeend', html);
-      let voteState = null;
+    <script defer>
 
-      let upvote = document.getElementById(qID);
-      let downVote = document.getElementById(`d${qID}`);
+        var container = document.getElementById("ordered-list");
+        fetch('https://us-west-2.aws.data.mongodb-api.com/app/application-0-qcsaz/endpoint/getQuestions')
+            .then((res) => {
+                return res.json();
+            })
+            .then((data) => {
+                data.forEach((question) => {
+                    let qID = `q${question._id}`;
+                    var html = `
+                        <div class="row">
+                        <div class="qVotes">
+                            <i id="${qID}" class="fa-solid fa-plus" style="color: #C5C6EF"></i>
+                            <div id="q${qID}" style="color: #5357b6">${question.votes}</div>
+                            <i id="d${qID}"class="fa-solid fa-minus" style="color: #C5C6EF"></i>
+                            </div>
+                        <a href="./comments.html?${question.id}">
+                            <li>
+                                <h4 class="title">
+                                        ${question.title}
+                                    </h4>
+                                    <div class="bottom">
+                                        <p class="timestamp">
+                                            ${new Date(Number(question.date)).toLocaleString()}
+                                        </p>
+                                        <p class="comment-count">
+                                            ${question.comments.length} comments
+                                        </p>
+                                    </div>
+                            </li>
+                            </a>
+                        </div>
 
-      upvote.addEventListener("click", () =>{
-        if(voteState == null){
-          thread.votes++;
-          console.log(thread.votes);
-          voteState = true;
-          upvote.style.color = "#5357b6";
-        } else if(voteState == false) {
-          thread.votes += 2;
-          voteState = true;
-          upvote.style.color = "#5357b6";
-          downVote.style.color = "#C5C6EF";
-        } else {
-          thread.votes--;
-          upvote.style.color = "#C5C6EF";
-          voteState = null;
-        }
-        document.getElementById(`q${qID}`).textContent = thread.votes;
+                        `
 
-      })
+                    container.insertAdjacentHTML('beforeend', html);
+                    let voteState = null;
 
-      downVote.addEventListener("click", () =>{
-        if(voteState == null){
-          thread.votes--
-          console.log(thread.votes);
-          voteState = false;
-          downVote.style.color = "#5357b6";
-        } else if(voteState == true){
-          thread.votes -= 2;
-          voteState = false;
-          downVote.style.color = "#5357b6";
-          upvote.style.color = "#C5C6EF";
-        } else {
-          thread.votes++
-          voteState = null;
-          downVote.style.color = "#C5C6EF";
+                    let upvote = document.getElementById(qID);
+                    let downVote = document.getElementById(`d${qID}`);
 
-        }
-        document.getElementById(`q${qID}`).textContent = thread.votes;
+                    upvote.addEventListener("click", () => {
+                        if (voteState == null) {
+                            question.votes++;
+                            console.log(question.votes);
+                            voteState = true;
+                            upvote.style.color = "#5357b6";
+                        } else if (voteState == false) {
+                            question.votes += 2;
+                            voteState = true;
+                            upvote.style.color = "#5357b6";
+                            downVote.style.color = "#C5C6EF";
+                        } else {
+                            question.votes--;
+                            upvote.style.color = "#C5C6EF";
+                            voteState = null;
+                        }
+                        document.getElementById(`q${qID}`).textContent = question.votes;
 
-      })
-      
-      console.log(upvote);
-      console.log(downVote);
-    }
+                    })
 
-    let btn = document.getElementById('form-button');
-    btn.onclick = function () {
-      let modal = btn.getAttribute("data-modal");
-      document.getElementById(modal).style.display = "block";
-    };
+                    downVote.addEventListener("click", () => {
+                        if (voteState == null) {
+                            question.votes--
+                            console.log(question.votes);
+                            voteState = false;
+                            downVote.style.color = "#5357b6";
+                        } else if (voteState == true) {
+                            question.votes -= 2;
+                            voteState = false;
+                            downVote.style.color = "#5357b6";
+                            upvote.style.color = "#C5C6EF";
+                        } else {
+                            question.votes++
+                            voteState = null;
+                            downVote.style.color = "#C5C6EF";
 
-    let closeBtn = document.getElementById('close-form');
-    closeBtn.onclick = function () {
-      let modal = closeBtn.closest(".modal");
-      modal.style.display = "none";
-    };
+                        }
+                        document.getElementById(`q${qID}`).textContent = question.votes;
 
-    window.onclick = function (event) {
-      if (event.target.className === "modal") {
-        event.target.style.display = "none";
-      }
-    };
-  </script>
+                    })
+
+                    console.log(upvote);
+                    console.log(downVote);
+
+                })
+            })
+        //grab form id and post info to database    
+        const formEl = document.getElementById('questionForm');
+
+        formEl.addEventListener('submit', event => {
+            event.preventDefault();
+
+            const formData = new FormData(formEl);
+            formData.append("date", `${Date.now()}`);
+            formData.append('votes', 0);
+            formData.append('comments', [{}]);
+            const data = Object.fromEntries(formData); // convert formFata to js object
+            console.log(data);
+
+            fetch('https://us-west-2.aws.data.mongodb-api.com/app/application-0-qcsaz/endpoint/createQuestion', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data),
+            }).then((res) => res.json())
+                .then((data) => console.log(data))
+                .catch((error) => console.log(error));
+            console.log(JSON.stringify(data));
+            closeBtn.onclick();
+        })
+
+        let btn = document.getElementById('form-button');
+        btn.onclick = function () {
+            let modal = btn.getAttribute("data-modal");
+            document.getElementById(modal).style.display = "block";
+        };
+
+        let closeBtn = document.getElementById('close-form');
+        closeBtn.onclick = function () {
+            let modal = closeBtn.closest(".modal");
+            modal.style.display = "none";
+        };
+
+        window.onclick = function (event) {
+            if (event.target.className === "modal") {
+                event.target.style.display = "none";
+            }
+        };
+    </script>
 </body>
+
+</html>
