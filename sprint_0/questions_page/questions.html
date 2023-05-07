@@ -4,53 +4,67 @@
 <head>
     <title>Questions and Answers</title>
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./catalog_style.css">
     <meta charset="UTF-8">
     <script src="https://kit.fontawesome.com/77b3ab044a.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div class="top-bar">
-        <h1>
-            CS 362
-        </h1>
-    </div>
-    <div class="main">
+    <div>
 
-        <ol id="ordered-list">
-            <button id="form-button" class="btn" data-modal="modalOne">Create a Question</button>
-        </ol>
-    </div>
-    <div id="modalOne" class="modal">
-        <div class="modal-content">
-            <div class="contact-form">
-                <a class="close" id="close-form">&times;</a>
-                <form id="questionForm">
-                    <h2>Submit a New Question</h2>
-                    <div>
-                        <input class="title" type="text" name="title" placeholder="Question Title" />
-                        <input class="title" type="text" name="author" placeholder="Author Name" />
-                    </div>
-                    <span>Message</span>
-                    <div>
-                        <textarea rows="5" name="content"></textarea>
-                    </div>
-                    <button type="submit" action="#">Submit</button>
-                </form>
+        <div class="homebar">
+            <div class="leftnav">
+                <img src="../catalog/tuffy-logo.png" class="logo">
+                <h1 id="title">Tuffy Courses</h1>
+            </div>
+            <div class="rightnav">
+                <ul>
+                    <input type="text" placeholder="Search..." name="search" id="search">
+                    <li><a href="index.html">Logout</a></li>
+                    <li><a href="">Profile</a></li>
+                    <li><a class="active" href="../catalog/catalog.html">Catalog</a></li>
+                    <li><a class="home" href="../dashboard/dashboard.html">Home</a></li>
+                </ul>
             </div>
         </div>
-    </div>
 
-    <script defer>
+        <div class="main">
 
-        var container = document.getElementById("ordered-list");
-        fetch('https://us-west-2.aws.data.mongodb-api.com/app/application-0-qcsaz/endpoint/getQuestions')
-            .then((res) => {
-                return res.json();
-            })
-            .then((data) => {
-                data.forEach((question) => {
-                    let qID = `q${question._id}`;
-                    var html = `
+            <ol id="ordered-list">
+                <button id="form-button" class="btn" data-modal="modalOne">Create a Question</button>
+            </ol>
+        </div>
+        <div id="modalOne" class="modal">
+            <div class="modal-content">
+                <div class="contact-form">
+                    <a class="close" id="close-form">&times;</a>
+                    <form id="questionForm">
+                        <h2>Submit a New Question</h2>
+                        <div>
+                            <input class="title" type="text" name="title" placeholder="Question Title" />
+                            <input class="title" type="text" name="author" placeholder="Author Name" />
+                        </div>
+                        <span>Message</span>
+                        <div>
+                            <textarea rows="5" name="content"></textarea>
+                        </div>
+                        <button type="submit" action="#">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <script defer>
+
+            var container = document.getElementById("ordered-list");
+            fetch('https://us-west-2.aws.data.mongodb-api.com/app/application-0-qcsaz/endpoint/getQuestions')
+                .then((res) => {
+                    return res.json();
+                })
+                .then((data) => {
+                    data.forEach((question) => {
+                        let qID = `q${question._id}`;
+                        var html = `
                         <div class="row">
                         <div class="qVotes">
                             <i id="${qID}" class="fa-solid fa-plus" style="color: #C5C6EF"></i>
@@ -76,102 +90,102 @@
 
                         `
 
-                    container.insertAdjacentHTML('beforeend', html);
-                    let voteState = null;
+                        container.insertAdjacentHTML('beforeend', html);
+                        let voteState = null;
 
-                    let upvote = document.getElementById(qID);
-                    let downVote = document.getElementById(`d${qID}`);
+                        let upvote = document.getElementById(qID);
+                        let downVote = document.getElementById(`d${qID}`);
 
-                    upvote.addEventListener("click", () => {
-                        if (voteState == null) {
-                            question.votes++;
-                            console.log(question.votes);
-                            voteState = true;
-                            upvote.style.color = "#5357b6";
-                        } else if (voteState == false) {
-                            question.votes += 2;
-                            voteState = true;
-                            upvote.style.color = "#5357b6";
-                            downVote.style.color = "#C5C6EF";
-                        } else {
-                            question.votes--;
-                            upvote.style.color = "#C5C6EF";
-                            voteState = null;
-                        }
-                        document.getElementById(`q${qID}`).textContent = question.votes;
+                        upvote.addEventListener("click", () => {
+                            if (voteState == null) {
+                                question.votes++;
+                                console.log(question.votes);
+                                voteState = true;
+                                upvote.style.color = "#5357b6";
+                            } else if (voteState == false) {
+                                question.votes += 2;
+                                voteState = true;
+                                upvote.style.color = "#5357b6";
+                                downVote.style.color = "#C5C6EF";
+                            } else {
+                                question.votes--;
+                                upvote.style.color = "#C5C6EF";
+                                voteState = null;
+                            }
+                            document.getElementById(`q${qID}`).textContent = question.votes;
+
+                        })
+
+                        downVote.addEventListener("click", () => {
+                            if (voteState == null) {
+                                question.votes--
+                                console.log(question.votes);
+                                voteState = false;
+                                downVote.style.color = "#5357b6";
+                            } else if (voteState == true) {
+                                question.votes -= 2;
+                                voteState = false;
+                                downVote.style.color = "#5357b6";
+                                upvote.style.color = "#C5C6EF";
+                            } else {
+                                question.votes++
+                                voteState = null;
+                                downVote.style.color = "#C5C6EF";
+
+                            }
+                            document.getElementById(`q${qID}`).textContent = question.votes;
+
+                        })
+
+                        console.log(upvote);
+                        console.log(downVote);
 
                     })
-
-                    downVote.addEventListener("click", () => {
-                        if (voteState == null) {
-                            question.votes--
-                            console.log(question.votes);
-                            voteState = false;
-                            downVote.style.color = "#5357b6";
-                        } else if (voteState == true) {
-                            question.votes -= 2;
-                            voteState = false;
-                            downVote.style.color = "#5357b6";
-                            upvote.style.color = "#C5C6EF";
-                        } else {
-                            question.votes++
-                            voteState = null;
-                            downVote.style.color = "#C5C6EF";
-
-                        }
-                        document.getElementById(`q${qID}`).textContent = question.votes;
-
-                    })
-
-                    console.log(upvote);
-                    console.log(downVote);
-
                 })
+            //grab form id and post info to database    
+            const formEl = document.getElementById('questionForm');
+
+            formEl.addEventListener('submit', event => {
+                event.preventDefault();
+
+                const formData = new FormData(formEl);
+                formData.set("date", `${Date.now()}`);
+                formData.set('votes', 0);
+                formData.set('comments', []);
+                const data = Object.fromEntries(formData); // convert formFata to js object
+                console.log(data);
+
+                fetch('https://us-west-2.aws.data.mongodb-api.com/app/application-0-qcsaz/endpoint/createQuestion', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data),
+                }).then((res) => res.json())
+                    .then((data) => console.log(data))
+                    .catch((error) => console.log(error));
+                console.log(JSON.stringify(data));
+                closeBtn.onclick();
             })
-        //grab form id and post info to database    
-        const formEl = document.getElementById('questionForm');
 
-        formEl.addEventListener('submit', event => {
-            event.preventDefault();
+            let btn = document.getElementById('form-button');
+            btn.onclick = function () {
+                let modal = btn.getAttribute("data-modal");
+                document.getElementById(modal).style.display = "block";
+            };
 
-            const formData = new FormData(formEl);
-            formData.append("date", `${Date.now()}`);
-            formData.append('votes', 0);
-            formData.append('comments', [{}]);
-            const data = Object.fromEntries(formData); // convert formFata to js object
-            console.log(data);
+            let closeBtn = document.getElementById('close-form');
+            closeBtn.onclick = function () {
+                let modal = closeBtn.closest(".modal");
+                modal.style.display = "none";
+            };
 
-            fetch('https://us-west-2.aws.data.mongodb-api.com/app/application-0-qcsaz/endpoint/createQuestion', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data),
-            }).then((res) => res.json())
-                .then((data) => console.log(data))
-                .catch((error) => console.log(error));
-            console.log(JSON.stringify(data));
-            closeBtn.onclick();
-        })
-
-        let btn = document.getElementById('form-button');
-        btn.onclick = function () {
-            let modal = btn.getAttribute("data-modal");
-            document.getElementById(modal).style.display = "block";
-        };
-
-        let closeBtn = document.getElementById('close-form');
-        closeBtn.onclick = function () {
-            let modal = closeBtn.closest(".modal");
-            modal.style.display = "none";
-        };
-
-        window.onclick = function (event) {
-            if (event.target.className === "modal") {
-                event.target.style.display = "none";
-            }
-        };
-    </script>
+            window.onclick = function (event) {
+                if (event.target.className === "modal") {
+                    event.target.style.display = "none";
+                }
+            };
+        </script>
 </body>
 
 </html>
