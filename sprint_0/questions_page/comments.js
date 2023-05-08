@@ -1,4 +1,5 @@
 var id = window.location.search.slice(1);
+console.log(id);
 var thread = threads.find(t => t.id == id);
 var header = document.querySelector('.header');
 var headerHtml = `
