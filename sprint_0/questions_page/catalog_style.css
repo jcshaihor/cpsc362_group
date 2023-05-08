@@ -62,7 +62,9 @@ button{
   /* Style the "active" element to highlight the current page */
   .homebar a.active {
     background-color: #00274cc4;
-      color: white;
+    
+    color: white;
+    border-radius: 0.25rem;
   }
   
   /* Style the search box inside the navigation bar */
@@ -121,105 +123,4 @@ button{
     border: 1px solid #ccc;
     }
   }
-  
-  .row {
-    display: flex;
-  
-  }
-  
-  /* Left column (menu) */
-  .left {
-    flex: 20%;
-    padding: 15px 0;
-    height: 110vh;
-  }
-  
-  .left h2 {
-    padding-left: 8px;
-  }
-  
-  /* Right column (page content) */
-  .right {
-    flex: 80%;
-    padding: 15px;
-  }
-  
-  .mySearch {
-    font-size: 18px;
-    padding: 11px;
-    width: 100%;
-  }
-  
- .material-symbols-outlined {
-  position: absolute;
-  top: 24%;
-  left: 18vw;
- }
-    
-  /* Style the navigation menu */
-  #myMenu {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-    
-  /* Style the navigation links */
-  #myMenu li a {
-    padding: 12px;
-    text-decoration: none;
-    color: black;
-    display: block;
-    cursor: pointer;
-  }
-    
-  #myMenu li a:hover {
-    background-color: #eee;
-  
-  }
 
-  .autocomplete {
-    position: relative;
-}
-
-input {
-  border: 1px solid transparent;
-  background-color: white;
-  padding: 10px;
-  font-size: 16px;
-}
-
-/*input[type=text] {
-  background-color: #f1f1f1;
-  width: 100%;
-}*/
-
-input[type=submit] {
-  background-color: DodgerBlue;
-  color: #fff;
-  cursor: pointer;
-}
-
-.autocomplete-items {
-    position: absolute;
-    border: 1px solid #d4d4d4;
-    border-bottom: none;
-    border-top: none;
-    z-index: 99;
-    /*position the autocomplete items to be the same width as the container:*/
-    top: 100%;
-    left: 0;
-    right: 0;
-}
-
-.autocomplete-items div {
-    padding: 10px;
-    cursor: pointer;
-    background-color: #fff; 
-    border-bottom: 1px solid #d4d4d4; 
-}
-
-.autocomplete-active {
-    background-color: DodgerBlue !important; 
-    color: #ffffff; 
-}
-  
