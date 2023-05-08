@@ -34,8 +34,8 @@ body {
 .container {
     background: white;
     position: relative;
-    height: 300px;
-    width: 250px;
+    height: 310px;
+    width: 275px;
     padding: 20px 20px;
     border-radius: 10px;
 }
@@ -53,6 +53,7 @@ body {
     margin-top: 20px;
     margin-bottom: 10px;
     padding: 10px;
+    overflow: hidden;
 }
 
 .container input[type="email"],
@@ -64,7 +65,6 @@ body {
 .form-icon {
     opacity: .6;
     position: absolute;
-    top: 0rem;
 }
 
 .password {
@@ -75,6 +75,7 @@ body {
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 10px;
+    overflow: hidden;
 }
 
 .loginButton {
@@ -97,5 +98,3 @@ body {
     color: white;
     background: #a46b16;
 }
-
-
