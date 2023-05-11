@@ -6,39 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Dashboard</title>
     <link rel="stylesheet" href="dashboard_style.css">
+    <link rel="stylesheet" href="../questions_page/catalog_style.css">
 
     <!--style will be temporary-->
     <style>
-        menu {
-            width: 35px;
-            height: 4px;
-            background-color: black;
-            margin: 3px 0;
-        }
+
     </style>
 </head>
 <!--Main-->
 <body>
     <div class="bg-color">
         <!--Top Navigation Bar-->
-        <div class="topnav">
+        <div class="homebar">
             <div class="leftnav">
-                <a class="logo" href="#">ㅤ</a>
+                <img src="../catalog/tuffy-logo.png" class="logo">
                 <h1 id="title">Tuffy Courses</h1>
             </div>
             <div class="rightnav">
-                <input type="text" placeholder="Search..." name="search" id="search">
-                <a href="../login_page/login.html">Logout</a>
-                <a class="profile">Profile</a>
-                <a href="../catalog/catalog.html">Catalog</a>
-                <a class="active" href="#">Home</a>
+                <ul>
+                    <input type="text" placeholder="Search..." name="search" id="search">
+                    <li><a class="home" href="../dashboard/dashboard.html">Home</a></li>
+                    <li><a class="active" href="../catalog/catalog.html">Catalog</a></li>
+                    <li><a href="">Profile</a></li>
+                    <li><a href="index.html">Logout</a></li>
+                </ul>
             </div>
-        </div>
+          </div>
 
         <h1 id="pinned">Your Pinned Courses</h1>
         <!--Buttons or lists for your courses-->
         <div class="grid-container">
-            <form action="/sprint_0/dashboard/set_class1/set_class1.html">
+            <form action="../questions_page/questions.html">
                 <button>CPSC 362</button>
             </form>
             <form action="/sprint_0/dashboard/set_class2/set_class2.html">
@@ -49,5 +47,5 @@
             </form>
         </div>
     </div>
-</body>
+  </body>
 </html>

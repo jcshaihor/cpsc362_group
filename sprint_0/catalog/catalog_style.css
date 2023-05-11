@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+
+body, html{
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 button{
     border: none;
     border-radius: 10px;
@@ -6,29 +17,37 @@ button{
     background-color:white;
   }
   
-  * {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: none;
-    box-sizing: border-box;
-  }
-  
-  body {
-    margin: 0;
-  }
-
-  ul {
-    list-style-type: none;
-    padding: 10px;
-    margin: 0;
-  }
   
   
   /* Add a black background color to the top navigation bar */
   .homebar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     overflow: hidden;
+    height: 65px;
     background-color:  #00274cee;
+    padding: 0px 15px 0px 15px;
+  }
+
+  .leftnav, .rightnav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+  }
+
+
+  .leftnav img{
+    width: 50px;
+  }
+
+  .rightnav ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+    gap: 10px;
   }
   
   /* Style the links inside the navigation bar */
@@ -44,13 +63,16 @@ button{
   /* Change the color of links on hover */
   .homebar a:hover {
     background-color: #ddd;
+    border-radius: 0.25rem;
     color: black;
   }
   
   /* Style the "active" element to highlight the current page */
   .homebar a.active {
     background-color: #00274cc4;
-      color: white;
+    
+    color: white;
+    border-radius: 0.25rem;
   }
   
   /* Style the search box inside the navigation bar */
@@ -58,40 +80,36 @@ button{
     float: right;
     padding: 6px;
     border: none;
-    margin-right: 16px;
+    /* margin-right: 16px; */
+    margin-bottom: 0;
     font-size: 17px;
   }
   
   /* Style the search box inside the navigation bar */
   #search {
-    padding: 6px;
     border: none;
-    margin-right: 10px;
+    align-self: center;
     font-size: 17px;
     padding: 14px 16px;
-    float: right;
+    border-radius: 0.25rem;
   }
   
-  .leftnav {
-    float: left;
-  }
+
   
   /* Tuffy Logo */
   .homebar a.logo {
     background-color: #00274cc4;
-    background-image: url('tuffy-logo.png');
+    background-image: url('../catalog/tuffy-logo.png');
     background-position: center;
     background-size: cover;
-    float: left;
   }
   
   
   #title {
-    margin-left: 60px;
-    margin-top: 5px;
+    /* margin-left: 60px;
+    margin-top: 5px; */
     color: #ddd;
   }
-  
   
   
   
@@ -115,14 +133,15 @@ button{
   
   .row {
     display: flex;
-  
+    min-height: 100vh;
   }
   
   /* Left column (menu) */
   .left {
+    display: flex;
+    flex-direction: column;
     flex: 20%;
     padding: 15px 0;
-    height: 110vh;
   }
   
   .left h2 {
@@ -142,9 +161,7 @@ button{
   }
   
  .material-symbols-outlined {
-  position: absolute;
-  top: 24%;
-  left: 18vw;
+
  }
     
   /* Style the navigation menu */
@@ -169,7 +186,8 @@ button{
   }
 
   .autocomplete {
-    position: relative;
+    display: flex;
+    background-color: white;
 }
 
 input {
