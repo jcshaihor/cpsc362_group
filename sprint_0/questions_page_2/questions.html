@@ -30,7 +30,7 @@
 
         <div class="main">
             <ol id="ordered-list">
-                <h2 style="text-align: center; color: black;">CPSC 362</h2>
+                <h2 style="text-align: center; color: black;">Math 150A</h2>
                 <button id="form-button" class="btn" data-modal="modalOne">Create a Question</button>
             </ol>
         </div>
@@ -57,7 +57,7 @@
         <script defer>
 
             var container = document.getElementById("ordered-list");
-            fetch('https://us-west-2.aws.data.mongodb-api.com/app/application-0-qcsaz/endpoint/getQuestions')
+            fetch('https://us-west-2.aws.data.mongodb-api.com/app/application-0-qcsaz/endpoint/getQuestions2')
                 .then((res) => {
                     return res.json();
                 })
@@ -154,7 +154,7 @@
                 const data = Object.fromEntries(formData); // convert formFata to js object
                 console.log(data);
 
-                fetch('https://us-west-2.aws.data.mongodb-api.com/app/application-0-qcsaz/endpoint/createQuestion', {
+                fetch('https://us-west-2.aws.data.mongodb-api.com/app/application-0-qcsaz/endpoint/createQuestion2', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

@@ -1,7 +1,7 @@
 var defaultThreads;
 
 async function fetchData() {
-  const response = await fetch("https://us-west-2.aws.data.mongodb-api.com/app/application-0-qcsaz/endpoint/getQuestions");
+  const response = await fetch("https://us-west-2.aws.data.mongodb-api.com/app/application-0-qcsaz/endpoint/getQuestions1");
   const data = await response.json();
   defaultThreads = data;
   console.log(defaultThreads);
@@ -63,22 +63,22 @@ function displayData() {
       addComment(comment);
       txt.value = '';
       thread.comments.push(comment);
-      localStorage.setItem('data', JSON.stringify(defaultThreads));
+      localStorage.setItem('myData', JSON.stringify(defaultThreads));
   })
 
   window.addEventListener('beforeunload', function() {
-    localStorage.setItem('data', JSON.stringify(defaultThreads));
+    localStorage.setItem('myData', JSON.stringify(defaultThreads));
   });
 }
 
-if (localStorage && localStorage.getItem('data')) {
-  defaultThreads = JSON.parse(localStorage.getItem('data'));
+if (localStorage && localStorage.getItem('myData')) {
+  defaultThreads = JSON.parse(localStorage.getItem('myData'));
   displayData();
 } else {
   fetchData()
     .then(() => {
       displayData();
-      localStorage.setItem('data', JSON.stringify(defaultThreads));
+      localStorage.setItem('myData', JSON.stringify(defaultThreads));
     })
     .catch((error) => console.log(error));
 }
