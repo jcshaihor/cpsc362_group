@@ -7,7 +7,9 @@ const physBtn = document.getElementById("phys");
 const socBtn = document.getElementById("soc");
 const histBtn = document.getElementById("hist");
 
-const classes = ["CPSC 100", "CPSC 102", "CPSC 362"];
+const classes = ["CPSC 100", "CPSC 102", "CPSC 131", "CPSC 223J", "CPSC 223N", "CPSC 240", "CPSC 253U", "CPSC 254", "CPSC 301", "CPSC 311", "CPSC 315", "CPSC 362", "CPSC 431", "CPSC 440", "CPSC 462"
+  , "CPSC 464", "CPSC 466", "CPSC 471", "EGCE 201", "EGCE 206", "EGCE 214", "EGCE 214L", "EGCE 301", "EGCE 302", "EGCE 308", "EGCE 324L", "EGCE 325", "EGCE 377", "EGCE 401", "EGCE 408", "EGCE 418"
+  , "EGCE 418", "EGCE 428", "EGCE 428L", "EGCE 430", "EGCE 432", "EGCE 435", "EGCE 436", "EGCE 468", "EGCE 532", "EGCE 556", "EGCE 583"];
 
 function passClass() {
   var className = document.getElementById("mySearch").value;
